@@ -15,4 +15,5 @@ add_library(dependency STATIC src/dependency/dependency.cc)
 add_library(api SHARED src/api/api.cc)
 
 add_library(plugin SHARED src/plugin/plugin.cc)
+target_link_options(plugin PUBLIC -Wl,--no-undefined)
 target_link_libraries(plugin api)
