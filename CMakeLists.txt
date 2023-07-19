@@ -10,7 +10,9 @@ include_directories(include)
 add_executable(main src/main/main.cc)
 target_link_libraries(main fmt dependency)
 
-add_library(dependency SHARED src/dependency/dependency.cc)
+add_library(dependency STATIC src/dependency/dependency.cc)
 
-add_library(api SHARED src/api/api.cc src/api/dependency_stub.cc)
-target_link_libraries(api)
+add_library(api SHARED src/api/api.cc)
+
+add_library(plugin SHARED src/plugin/plugin.cc)
+target_link_libraries(plugin api)
