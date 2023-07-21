@@ -9,6 +9,7 @@ include_directories(include)
 
 add_executable(main src/main/main.cc)
 target_link_libraries(main fmt dependency api)
+target_link_options(main PRIVATE -Wl,--no-undefined,--no-allow-shlib-undefined)
 
 add_library(dependency STATIC src/dependency/dependency.cc)
 
