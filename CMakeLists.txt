@@ -8,7 +8,7 @@ set(CMAKE_CXX_FLAGS "-Wall -Werror -O3")
 include_directories(include)
 
 add_executable(main src/main/main.cc)
-target_link_libraries(main fmt dependency)
+target_link_libraries(main fmt dependency api)
 
 add_library(dependency STATIC src/dependency/dependency.cc)
 

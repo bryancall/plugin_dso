@@ -1,5 +1,5 @@
 #include <api/api.h>
 
-bool some_function() {
+bool plugin_init() {
   return api();
 }
