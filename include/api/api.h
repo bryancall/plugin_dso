@@ -2,8 +2,7 @@
 
 #include <dependency/dependency.h>
 
-bool api();
-
+bool api() noexcept;
 
 extern "C" {
   bool plugin_init();
