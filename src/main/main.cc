@@ -1,11 +1,9 @@
 #include <fmt/core.h>
-#include <dependency/dependency.h>
 #include <dlfcn.h>
 
 //----------------------------------------------------------------------------
 int main(int argc, char** argv) {
   fmt::print("Here in main()\n");
-  dependency();
 
   void *handle = dlopen("./libplugin.so", RTLD_NOW | RTLD_LOCAL);
 
