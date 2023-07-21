@@ -4,8 +4,7 @@
 
 //----------------------------------------------------------------------------
 int main(int argc, char** argv) {
-  fmt::print("Hello, World!\n");
-
+  fmt::print("Here in main()\n");
   dependency();
 
   void *handle = dlopen("./libplugin.so", RTLD_NOW | RTLD_LOCAL);
@@ -15,7 +14,7 @@ int main(int argc, char** argv) {
     return 1;
   }
 
-  auto plugin_init = (bool (*)())dlsym(handle, "_Z11plugin_initv");
+  auto plugin_init = (bool (*)())dlsym(handle, "plugin_init");
 
   if (!plugin_init) {
     fmt::print("Error: {}\n", dlerror());

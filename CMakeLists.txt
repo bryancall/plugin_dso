@@ -14,7 +14,8 @@ target_link_options(main PRIVATE -Wl,--no-undefined,--no-allow-shlib-undefined)
 add_library(dependency STATIC src/dependency/dependency.cc)
 
 add_library(api SHARED src/api/api.cc)
+target_link_libraries(api fmt)
 
 add_library(plugin SHARED src/plugin/plugin.cc)
 target_link_options(plugin PRIVATE -Wl,--no-undefined)
-target_link_libraries(plugin api)
+target_link_libraries(plugin fmt api)
