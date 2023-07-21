@@ -2,4 +2,4 @@
 
 #include <dependency/dependency.h>
 
-[[nodiscard]] bool api() noexcept;
+bool api() noexcept;
